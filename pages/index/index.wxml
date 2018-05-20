@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class = "weather-wrapper">
-  <view class = "temp">12°
+  <view class = "temp">{{nowTemp}}°
   </view>
-  <view class="info">晴天
+  <view class="info">{{nowWeather}}
   </view>
-   <image class ="weather-bg" src = "/images/sunny-bg.png" mode = "scaleToFill">
+   <image class ="weather-bg" src = "{{nowWeatherBackground}}" mode = "scaleToFill">
    <!-- 图片默认就是scaleToFill，可以不写 -->
   </image> 
 </view>
