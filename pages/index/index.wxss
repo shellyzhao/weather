@@ -28,3 +28,50 @@
   height: 100%;
   z-index: -1;
 }
+.timetips{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+.timetips-icon{
+  margin-right: 10rpx;
+  width: 36rpx;
+  height: 28rpx;
+}
+.timetips-text{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+}
+.forcast-list{
+  display: flex;
+  /* justify-content: center; */
+
+}
+.forcast-item{
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  /* 去掉自动压缩，如果不加flex-shrink的话，1-9总的宽度会被压缩至一屏以内，而我们要的是每一格宽度固定，总的可以超出屏幕横向滑动 */
+  align-items: center;
+  /* 需要一屏显示7个格子，所以每个的宽度为(100/7)% */
+  width: 14.3%;
+  /* font-size: 38rpx; */
+  line-height: 54rpx;
+}
+.forcast-time{
+  font-size: 30rpx;
+  line-height: 44rpx;
+}
+.forcast-weather{
+  margin-top: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.forcast-temp{
+  margin-top: 46rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}

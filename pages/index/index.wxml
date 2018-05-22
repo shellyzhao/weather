@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!-- 添加当前天气显示 -->
 <view class = "weather-wrapper">
   <view class = "temp">{{nowTemp}}°
   </view>
@@ -8,3 +9,31 @@
    <!-- 图片默认就是scaleToFill，可以不写 -->
   </image> 
 </view>
+
+<!-- 添加未来天气预测 -->
+<!-- 添加滑动视图，默认为竖向滑动，scroll-x定义成横向滑动 -->
+  <view class = "timetips">
+    <image class = "timetips-icon" src = "/images/time-icon.png">
+    </image>
+    <view class = "timetips-text">未来24小时天气预测
+    </view>
+  </view>
+
+<scroll-view scroll-x>
+  <!-- 用微信for语法渲染5个视图，作用与<view></view>重复写5个是一样的，但代码比较简洁 -->
+  <view class = "forcast-list">
+    <view class = "forcast-item" wx:for="{{forecast}}">
+    <!-- 添加天气预报的icon、时间等信息，构建更完整的视图 -->
+      <view class = "forcast-time">
+      {{item.time}}
+      </view>
+      <image class = "forcast-weather" src = "{{item.iconPath}}">
+      <!-- 如果要用真正的天气预报的数据，就要用变量{{forcastWeatherIcon}}，再在js里面用之前获取背景图片的方法把变量的值获取，以映射到相应的图片，这里先用静态图片 -->
+      </image>
+      <view class = "forcast-temp">
+      {{item.temp}}
+      </view>
+
+    </view>
+  </view>
+</scroll-view>
