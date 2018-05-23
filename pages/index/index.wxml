@@ -22,7 +22,7 @@
 <scroll-view scroll-x>
   <!-- 用微信for语法渲染5个视图，作用与<view></view>重复写5个是一样的，但代码比较简洁 -->
   <view class = "forcast-list">
-    <view class = "forcast-item" wx:for="{{forecast}}">
+    <view class = "forcast-item" wx:for="{{hourlyWeather}}">
     <!-- 添加天气预报的icon、时间等信息，构建更完整的视图 -->
       <view class = "forcast-time">
       {{item.time}}
