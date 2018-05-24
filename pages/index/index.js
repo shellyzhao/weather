@@ -146,5 +146,12 @@ Page({
       todayTemp: `${forecastResult.today.minTemp}° - ${forecastResult.today.maxTemp}°`,
       todayDate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 今天`
     })
+  },
+  onTapDayWeather() {
+    // 调用微信显示toast
+    wx.showToast()
+    wx.navigateTo({
+      url: '/pages/list/list'
+    })
   }
 })
