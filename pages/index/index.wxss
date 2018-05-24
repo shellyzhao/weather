@@ -75,3 +75,28 @@
   font-size: 40rpx;
   line-height: 56rpx;
 }
+.day-weather{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  left: 40rpx;
+  right: 40rpx; 
+  bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+.temp-text{
+  /* flex-glow:1是让这个元素占据剩余所有的位置，这样arrow-icon就会被挤到最右边了，还可以灵活应用，设置不同的元素flex-grow的值不一样，比如1和2，这样2的宽度就是1的两倍了 */
+  flex-grow: 1;
+  padding-right: 30rpx;
+  text-align: right;
+}
+
+.arrow-icon{
+  width: 13rpx;
+  height: 24rpx;
+}

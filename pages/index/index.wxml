@@ -7,8 +7,22 @@
   </view>
    <image class ="weather-bg" src = "{{nowWeatherBackground}}" mode = "scaleToFill">
    <!-- 图片默认就是scaleToFill，可以不写 -->
-  </image> 
+   </image> 
+
+  
+  <!-- 添加天气描述 -->
+  <view class = "day-weather">
+    <view class = "day-text">
+      {{todayDate}}
+    </view>
+    <view class = "temp-text">
+      {{todayTemp}}
+    </view>
+    <image class = "arrow-icon" src = "/images/arrow.png">
+    </image>
+  </view>
 </view>
+
 
 <!-- 添加未来天气预测 -->
 <!-- 添加滑动视图，默认为竖向滑动，scroll-x定义成横向滑动 -->

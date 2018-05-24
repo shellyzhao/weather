@@ -22,6 +22,8 @@ Page({
     nowWeather: '',
     nowWeatherBackground: '',
     hourlyWeather: [],
+    todayTemp: '',
+    todayDate: ''
   },
   onPullDownRefresh(){
     this.getNow(()=>{
@@ -80,8 +82,8 @@ Page({
       },
       success: res => {
         console.log(res)
-        let forcastResult = res.data.result
-        this.setHourlyWeather(forcastResult)
+        let forecastResult = res.data.result
+        this.setHourlyWeather(forecastResult)
         // let temp = result.now.temp
         // let weather = result.now.weather
         // this.setData({
@@ -95,6 +97,7 @@ Page({
         // })
 
         //set hourlyWeather
+        this.setToday(forecastResult)
 
       },
       complete: () => {
@@ -118,8 +121,8 @@ Page({
         backgroundColor: weatherColorMap[weather],
       })
   },
-  setHourlyWeather(forcastResult) {
-    let forecast = forcastResult.forecast
+  setHourlyWeather(forecastResult) {
+    let forecast = forecastResult.forecast
     let hourlyWeather = []
     let nowHour = new Date().getHours()
     for (let i = 0; i < 8; i += 1) {
@@ -133,6 +136,15 @@ Page({
     this.setData({
       hourlyWeather: hourlyWeather
     })
+  },
+  setToday(forecastResult) {
+    let date = new Date()
+    this.setData({
+// `$用于字符串拼接，`常量${变量}常量`例如： var a = 1; console.log('一共有' + a + '个鸡蛋！')
 
+// 那么现在你只要console.log(`一共有${a}个鸡蛋！`)
+      todayTemp: `${forecastResult.today.minTemp}° - ${forecastResult.today.maxTemp}°`,
+      todayDate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 今天`
+    })
   }
 })
